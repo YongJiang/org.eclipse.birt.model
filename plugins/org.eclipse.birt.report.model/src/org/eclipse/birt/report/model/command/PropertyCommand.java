@@ -34,7 +34,7 @@ import org.eclipse.birt.report.model.core.Structure;
 import org.eclipse.birt.report.model.core.StyledElement;
 import org.eclipse.birt.report.model.elements.ExtendedItem;
 import org.eclipse.birt.report.model.elements.ReportDesign;
-import org.eclipse.birt.report.model.extension.IExtendableElement;
+import org.eclipse.birt.report.model.elements.interfaces.IExtendedItemModel;
 import org.eclipse.birt.report.model.i18n.MessageConstants;
 import org.eclipse.birt.report.model.i18n.ModelMessages;
 import org.eclipse.birt.report.model.metadata.ElementPropertyDefn;
@@ -108,11 +108,11 @@ public class PropertyCommand extends AbstractElementCommand
 	public void setProperty( ElementPropertyDefn prop, Object value )
 			throws SemanticException
 	{
-		if ( IExtendableElement.EXTENSION_NAME_PROP.equals( prop.getName( ) ) )
+		if ( IExtendedItemModel.EXTENSION_NAME_PROP.equals( prop.getName( ) ) )
 		{
 			throw new PropertyValueException(
 					element,
-					IExtendableElement.EXTENSION_NAME_PROP,
+					IExtendedItemModel.EXTENSION_NAME_PROP,
 					value,
 					PropertyValueException.DESIGN_EXCEPTION_EXTENSION_SETTING_FORBIDDEN );
 		}
@@ -331,7 +331,7 @@ public class PropertyCommand extends AbstractElementCommand
 		{
 			doSetProperty( prop, value );
 		}
-		else if ( IExtendableElement.EXTENSION_NAME_PROP.equals( propName ) )
+		else if ( IExtendedItemModel.EXTENSION_NAME_PROP.equals( propName ) )
 		{
 			doSetProperty( prop, value );
 		}

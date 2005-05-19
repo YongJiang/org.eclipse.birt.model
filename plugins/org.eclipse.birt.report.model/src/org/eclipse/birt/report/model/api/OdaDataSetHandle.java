@@ -241,11 +241,23 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 	 * Returns the extension name defined by the extended item.
 	 * 
 	 * @return the extension name as a string
+	 * @deprecated use <code>getExtensionID()</code>
 	 */
 
 	public String getExtensionName( )
 	{
-		return getStringProperty( OdaDataSet.EXTENSION_NAME_PROP );
+		return null;
+	}
+
+	/**
+	 * Returns ID of the extension which extends this ODA data set.
+	 * 
+	 * @return the extension ID
+	 */
+
+	public String getExtensionID( )
+	{
+		return getStringProperty( OdaDataSet.EXTENSION_ID_PROP );
 	}
 
 	/**

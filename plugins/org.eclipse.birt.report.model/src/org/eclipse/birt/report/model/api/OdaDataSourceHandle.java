@@ -56,11 +56,23 @@ public class OdaDataSourceHandle extends DataSourceHandle
 	 * Returns the extension name defined by the extended item.
 	 * 
 	 * @return the extension name as a string
+	 * @deprecated use <code>getExtensioID()</code>
 	 */
 
 	public String getExtensionName( )
 	{
-		return getStringProperty( OdaDataSource.EXTENSION_NAME_PROP );
+		return null;
+	}
+
+	/**
+	 * Returns ID of the extension which extends this ODA data source.
+	 * 
+	 * @return the extension ID
+	 */
+
+	public String getExtensionID( )
+	{
+		return getStringProperty( OdaDataSource.EXTENSION_ID_PROP );
 	}
 
 	/**
@@ -151,7 +163,7 @@ public class OdaDataSourceHandle extends DataSourceHandle
 
 	public IElementDefn getDefn( )
 	{
-		ElementDefn extDefn = ( (IExtendableElement) getElement( ) )
+		ElementDefn extDefn = ( (OdaDataSource) getElement( ) )
 				.getExtDefn( );
 		if ( extDefn != null )
 			return extDefn;
