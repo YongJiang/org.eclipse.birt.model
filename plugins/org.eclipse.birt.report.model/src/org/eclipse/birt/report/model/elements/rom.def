@@ -1659,7 +1659,6 @@
   </Element>
   <Element name="OdaDataSource" javaClass="org.eclipse.birt.report.model.elements.OdaDataSource" displayNameID="Element.OdaDataSource" isAbstract="false" extends="DataSource" canExtend="false" isNameRequired="true">
     <Property name="extensionID" displayNameID="Element.OdaDataSource.extensionID" type="string" isIntrinsic="true" />
-    <Property name="driverName" type="string" displayNameID="Element.OdaDataSource.driverName" valueRequired="true" />
     <Property name="privateDriverProperties" type="structure" isList="true" detailType="ExtendedProperty" displayNameID="Element.OdaDataSource.privateDriverProperties" />
     <PropertyVisibility name="extensionID" propertyVisibility="hide" />
   </Element>

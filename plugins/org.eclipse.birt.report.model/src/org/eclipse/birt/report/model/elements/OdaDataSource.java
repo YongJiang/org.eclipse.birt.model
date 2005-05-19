@@ -226,9 +226,6 @@ public class OdaDataSource extends DataSource
 	{
 		List list = super.validate( design );
 
-		list.addAll( ValueRequiredValidator.getInstance( ).validate( design,
-				this, DRIVER_NAME_PROP ) );
-
 		return list;
 	}
 

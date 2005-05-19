@@ -82,22 +82,23 @@ public class OdaDataSourceHandle extends DataSourceHandle
 	 *            the name to set
 	 * @throws SemanticException
 	 *             if this property is locked.
+	 * @deprecated This property is removed.
 	 */
 
 	public void setDriverName( String driverName ) throws SemanticException
 	{
-		setProperty( OdaDataSource.DRIVER_NAME_PROP, driverName );
 	}
 
 	/**
 	 * Returns the driver name.
 	 * 
 	 * @return the driver name
+	 * @deprecated This property is removed.
 	 */
 
 	public String getDriverName( )
 	{
-		return getStringProperty( OdaDataSource.DRIVER_NAME_PROP );
+		return null;
 	}
 
 	/**

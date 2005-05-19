@@ -384,8 +384,6 @@ public class DesignWriter extends ElementVisitor
 
 		super.visitOdaDataSource( obj );
 
-		property( obj, OdaDataSource.DRIVER_NAME_PROP );
-
 		List properties = (List) obj.getLocalProperty( design,
 				OdaDataSource.PRIVATE_DRIVER_PROPERTIES_PROP );
 		writeExtendedProperties( properties,
