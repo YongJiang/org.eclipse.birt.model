@@ -98,12 +98,13 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 	/**
 	 * Returns the data set type.
 	 * 
+	 * @deprecated type has been replaced by extension ID
 	 * @return the data set type
 	 */
 
 	public String getType( )
 	{
-		return getStringProperty( OdaDataSet.TYPE_PROP );
+		return null;
 	}
 
 	/**
@@ -196,6 +197,7 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 	/**
 	 * Sets the type.
 	 * 
+	 * @deprecated type has been replaced by extension ID
 	 * @param type
 	 *            the type to set
 	 * @throws SemanticException
@@ -204,7 +206,7 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 
 	public void setType( String type ) throws SemanticException
 	{
-		setStringProperty( OdaDataSet.TYPE_PROP, type );
+//		setStringProperty( OdaDataSet.TYPE_PROP, type );
 	}
 
 	/**
