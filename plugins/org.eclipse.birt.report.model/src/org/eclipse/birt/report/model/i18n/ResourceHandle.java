@@ -59,8 +59,9 @@ public class ResourceHandle
 	public String getMessage( String key )
 	{
 		if ( key == null )
-			throw new IllegalArgumentException(
-					"The resource key shouldn't be null." ); //$NON-NLS-1$
+			return ("This message indicates key is null, please solve it");
+			//throw new IllegalArgumentException(
+					//		"The resource key shouldn't be null." ); //$NON-NLS-1$
 
 		try
 		{
