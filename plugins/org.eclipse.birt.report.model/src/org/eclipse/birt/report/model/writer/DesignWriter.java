@@ -2343,17 +2343,11 @@ public class DesignWriter extends ElementVisitor
 		super.visitOdaDataSet( obj );
 
 		if ( (String) obj.getLocalProperty( design,
-				OdaDataSet.QUERY_SCRIPT_METHOD ) != null )
-		{
-			property( obj, OdaDataSet.QUERY_SCRIPT_METHOD );
-		}
-		else if ( (String) obj.getLocalProperty( design,
 				OdaDataSet.QUERY_TEXT_PROP ) != null )
 		{
 			property( obj, OdaDataSet.QUERY_TEXT_PROP );
 		}
 
-		property( obj, OdaDataSet.TYPE_PROP );
 		property( obj, OdaDataSet.RESULT_SET_NAME_PROP );
 
 		propertyCDATA( obj, OdaDataSet.PRIVATE_DRIVER_DESIGN_STATE_PROP );

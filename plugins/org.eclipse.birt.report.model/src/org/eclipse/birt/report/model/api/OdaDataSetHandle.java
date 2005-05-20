@@ -108,19 +108,6 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 	}
 
 	/**
-	 * Returns the query type.
-	 * 
-	 * @return the query type
-	 * 
-	 * @deprecated by the {@link #getType()}
-	 */
-
-	public String getQueryType( )
-	{
-		return getStringProperty( OdaDataSet.TYPE_PROP );
-	}
-
-	/**
 	 * Returns the result set name.
 	 * 
 	 * @return the result set name
@@ -173,11 +160,11 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 	 *            the script to set
 	 * @throws SemanticException
 	 *             if this property is locked.
+	 * @deprecated
 	 */
 
 	public void setQueryScript( String script ) throws SemanticException
 	{
-		return;
 	}
 
 	/**
@@ -206,23 +193,6 @@ public class OdaDataSetHandle extends DataSetHandle implements IOdaDataSetModel
 
 	public void setType( String type ) throws SemanticException
 	{
-//		setStringProperty( OdaDataSet.TYPE_PROP, type );
-	}
-
-	/**
-	 * Sets the query type.
-	 * 
-	 * @param type
-	 *            the type to set
-	 * @throws SemanticException
-	 *             if this property is locked.
-	 * 
-	 * @deprecated by the {@link #setType(String)}
-	 */
-
-	public void setQueryType( String type ) throws SemanticException
-	{
-		setStringProperty( OdaDataSet.TYPE_PROP, type );
 	}
 
 	/**
