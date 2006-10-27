@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: BIRT Resources Plug-in
-Bundle-SymbolicName: org.eclipse.birt.resources;singleton:=true
-Bundle-Version: 2.2.0.qualifier
-Bundle-Localization: plugin
