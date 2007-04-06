@@ -676,9 +676,6 @@ public class StyleParseTest extends BaseTestCase
 				.next( );
 		assertEquals( "[this]", highlightHandle.getTestExpression( ) ); //$NON-NLS-1$
 
-		// set isDesignTime
-		highlightHandle.setDesignTime( true );
-
 		ColorHandle colorHandle = highlightHandle.getColor( );
 		colorHandle.setRGB( 0xFF0088 );
 
@@ -975,10 +972,6 @@ public class StyleParseTest extends BaseTestCase
 		HighlightRuleHandle highlightHandle = (HighlightRuleHandle) highlightHandles
 				.next( );
 		assertNotNull( highlightHandle );
-
-		// isDesignTime
-		assertFalse( highlightHandle.isDesignTime( ) );
-
 		assertEquals( "[this]", highlightHandle.getTestExpression( ) ); //$NON-NLS-1$
 
 		ColorHandle colorHandle = highlightHandle.getColor( );

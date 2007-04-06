@@ -8,7 +8,6 @@
             <list-property name="highlightRules">
                 <structure>
                     <property name="operator">eq</property>
-                    <property name="isDesignTime">false</property>
                     <property name="backgroundColor">white</property>
                     <property name="borderTopStyle">solid</property>
                     <property name="borderTopWidth">thin</property>
