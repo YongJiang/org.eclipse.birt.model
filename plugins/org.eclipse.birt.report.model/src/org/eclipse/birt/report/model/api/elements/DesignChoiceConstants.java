@@ -825,7 +825,7 @@ public interface DesignChoiceConstants
 	/**
 	 * Date time level type -- type for date-time cube level.
 	 */
-	public static final String CHOICE_DATE_TIME_LEVEL_TYPE = "dateTimeLevlType"; //$NON-NLS-1$
+	public static final String CHOICE_DATE_TIME_LEVEL_TYPE = "dateTimeLevelType"; //$NON-NLS-1$
 	public static final String DATE_TIME_LEVEL_TYPE_YEAR = "year"; //$NON-NLS-1$
 	public static final String DATE_TIME_LEVEL_TYPE_MONTH = "month"; //$NON-NLS-1$
 	public static final String DATE_TIME_LEVEL_TYPE_QUARTER = "quarter"; //$NON-NLS-1$
@@ -837,4 +837,16 @@ public interface DesignChoiceConstants
 	public static final String DATE_TIME_LEVEL_TYPE_HOUR = "hour"; //$NON-NLS-1$
 	public static final String DATE_TIME_LEVEL_TYPE_MINUTE = "minute"; //$NON-NLS-1$
 	public static final String DATE_TIME_LEVEL_TYPE_SECOND = "second"; //$NON-NLS-1$
+	/**
+	 * @deprecated This is replaced by DATE_TIME_LEVEL_TYPE_WEEK_OF_YEAR and
+	 *             DATE_TIME_LEVEL_TYPE_WEEK_OF_MONTH, and not used anymore.
+	 */
+	public static final String DATE_TIME_LEVEL_TYPE_WEEK = "week"; //$NON-NLS-1$
+	/**
+	 * @deprecated This is replaced by DATE_TIME_LEVEL_TYPE_DAY_OF_YEAR,
+	 *             DATE_TIME_LEVEL_TYPE_DAY_OF_MONTH and
+	 *             DATE_TIME_LEVEL_TYPE_DAY_OF_WEEK, and not used anymore.
+	 */
+	public static final String DATE_TIME_LEVEL_TYPE_DAY = "day"; //$NON-NLS-1$
+
 };
