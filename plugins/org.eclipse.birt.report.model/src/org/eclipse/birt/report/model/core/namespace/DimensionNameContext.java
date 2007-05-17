@@ -80,22 +80,31 @@ public class DimensionNameContext extends AbstractNameContext
 	 * 
 	 * @param elementName
 	 *            the element name
+	 * @param level
+	 *            the depth of libraries that are included in the module
 	 * 
 	 * @return the element reference value.
 	 */
 
-	private ElementRefValue resolve( String elementName )
+	private ElementRefValue resolve( String elementName, int level )
 	{
 		String namespace = StringUtil.extractNamespace( elementName );
 		String name = StringUtil.extractName( elementName );
 
-		List elements = getElements( NATIVE_LEVEL );
+		List elements = getElements( level );
 		for ( int i = 0; i < elements.size( ); i++ )
 		{
 			DesignElement tmpElement = (DesignElement) elements.get( i );
 			if ( tmpElement.getFullName( ).equals( name ) )
 			{
-				return new ElementRefValue( namespace, tmpElement );
+				String tmpNameSpace = null;
+				Module root = tmpElement.getRoot( );
+				if ( root instanceof Library )
+					tmpNameSpace = ( (Library) root ).getNamespace( );
+				if ( ( namespace == null && tmpNameSpace == null )
+						|| ( namespace != null && namespace
+								.equals( tmpNameSpace ) ) )
+					return new ElementRefValue( namespace, tmpElement );
 			}
 		}
 
@@ -109,16 +118,18 @@ public class DimensionNameContext extends AbstractNameContext
 	 * 
 	 * @param element
 	 *            the element
+	 * @param level
+	 *            the depth of libraries that are included in the module
 	 * 
 	 * @return the element reference value.
 	 */
 
-	private ElementRefValue resolve( DesignElement element )
+	private ElementRefValue resolve( DesignElement element, int level )
 	{
 		if ( element == null )
 			return null;
 
-		return doResolveElement( getElements( NATIVE_LEVEL ), element );
+		return doResolveElement( getElements( level ), element );
 	}
 
 	/**
@@ -174,9 +185,9 @@ public class DimensionNameContext extends AbstractNameContext
 		if ( propDefn != null
 				&& IDesignElementModel.EXTENDS_PROP.equalsIgnoreCase( propDefn
 						.getName( ) ) )
-			return resolve( element );
+			return resolve( element, DIRECTLY_INCLUDED_LEVEL );
 
-		return resolve( element );
+		return resolve( element, ARBITARY_LEVEL );
 	}
 
 	/*
@@ -191,9 +202,9 @@ public class DimensionNameContext extends AbstractNameContext
 		if ( propDefn != null
 				&& IDesignElementModel.EXTENDS_PROP.equalsIgnoreCase( propDefn
 						.getName( ) ) )
-			return resolve( elementName );
+			return resolve( elementName, DIRECTLY_INCLUDED_LEVEL );
 		// try to resolve and return
-		return resolve( elementName );
+		return resolve( elementName, ARBITARY_LEVEL );
 	}
 
 	/*
@@ -205,7 +216,7 @@ public class DimensionNameContext extends AbstractNameContext
 	public DesignElement findElement( String elementName,
 			IElementDefn elementDefn )
 	{
-		return resolve( elementName ).getElement( );
+		return resolve( elementName, ARBITARY_LEVEL ).getElement( );
 	}
 
 	/*

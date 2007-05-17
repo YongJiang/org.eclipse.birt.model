@@ -1903,7 +1903,9 @@
 		<Default>any</Default>
 	</Member>
     <Member displayNameID="Structure.ComputedColumn.aggregateOn" isIntrinsic="true" name="aggregateOn" since="2.2" subType="string" type="list" />	  
-    <Member detailType="measureFunction" displayNameID="Structure.ComputedColumn.aggregateFunction" isIntrinsic="true" name="aggregateFunction" since="2.2" type="choice" />	  	  
+    <Member detailType="measureFunction" displayNameID="Structure.ComputedColumn.aggregateFunction" isIntrinsic="true" name="aggregateFunction" since="2.2" type="choice" >
+    	<Allowed>sum,average,count,weighted-avg,max,min</Allowed>
+    </Member>	  	  
     <Member displayNameID="Structure.ComputedColumn.arguments" isIntrinsic="true" name="arguments" since="2.2" subType="expression" type="list" />	  	  	  	  
     <Member displayNameID="Structure.ComputedColumn.filterExpr" isIntrinsic="true" name="filterExpr" since="2.2" type="expression" />	  	  	  	  
   </Structure>
@@ -2745,9 +2747,8 @@
     <Property detailType="TOCStructure" name="toc" displayNameID="Element.ReportItem.toc"  since="2.2" type="structure" />
     <Property detailType="DataSet" displayNameID="Element.ReportItem.dataSet" name="dataSet" runtimeSettable="false" since="1.0" type="elementRef">
       <Trigger validator="DataSetRequiredValidator"/>
-    </Property>
-	<Property detailType="Cube" displayNameID="Element.ReportItem.cube" name="cube" runtimeSettable="false" since="2.2" type="elementRef"/>
-	<PropertyGroup displayNameID="Element.ReportItem">
+	</Property>
+    <PropertyGroup displayNameID="Element.ReportItem">
       <Property displayNameID="Element.ReportItem.x" name="x" since="reserved" type="dimension" />
       <Property displayNameID="Element.ReportItem.y" name="y" since="reserved" type="dimension" />
       <Property displayNameID="Element.ReportItem.height" name="height" since="1.0" type="dimension" validator="NonNegativeValueValidator" />
@@ -3804,7 +3805,8 @@
   </Element>  	
   <Element allowsUserProperties="false" canExtend="true" displayNameID="Element.Measure" extends="ReportElement" hasStyle="false" isAbstract="true" isNameRequired="true" javaClass="org.eclipse.birt.report.model.elements.olap.Measure" name="Measure" nameSpace="cube" since="2.2" xmlName="measure">
   	<Property detailType="measureFunction" displayNameID="Element.Measure.function" name="function" runtimeSettable="false" since="2.2" type="choice">
-  	  <Default>sum</Default>	
+  	  <Default>sum</Default>
+  	  <Allowed>sum,average,max,min,first,last,count,count-distinct</Allowed>	
   	</Property>
   	<Property displayNameID="Element.Measure.measureExpression" name="measureExpression" runtimeSettable="false" since="2.2" type="expression" />
   	<Property displayNameID="Element.Measure.isCalculated" name="isCalculated" runtimeSettable="false" since="2.2" type="boolean" >
