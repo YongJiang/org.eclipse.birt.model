@@ -78,4 +78,18 @@ public class DataColumnNameValidatorTest extends BaseTestCase
 				designHandle.getModule( ), datawithBind.getElement( ) );
 		assertEquals( 0, result.size( ) );
 	}
+
+	/**
+	 * Tests validate column name. If the column locates in template, the column
+	 * name need not be checked.
+	 * 
+	 * @throws Exception
+	 */
+	public void testValidateColumnNameInTemplate( ) throws Exception
+	{
+		openDesign( "ValidateColumnNameInTemplateTest.xml" ); //$NON-NLS-1$
+
+		assertEquals( 0, designHandle.getErrorList( ).size( ) );
+	}
+
 }
