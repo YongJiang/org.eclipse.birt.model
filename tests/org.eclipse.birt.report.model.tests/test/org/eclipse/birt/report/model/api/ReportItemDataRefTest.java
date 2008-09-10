@@ -128,14 +128,14 @@ public class ReportItemDataRefTest extends BaseTestCase
 		assertEquals( ReportItemHandle.DATABINDING_TYPE_DATA, text
 				.getDataBindingType( ) );
 
-		List<ReportItemHandle> tmpList = text
-				.getAvailableCubeBindingReferenceList( );
-		assertEquals( 6, tmpList.size( ) );
+		List<ReportItemHandle> tmpList = text.getAvailableCubeBindingReferenceList( );
+				
+		assertEquals( 5, tmpList.size( ) );
 
 		// make sure the last one has no name.
-		assertNull( tmpList.get( 5 ).getName( ) );
+		assertNull( tmpList.get( 4 ).getName( ) );
 
-		assertEquals( 5, text.getNamedCubeBindingReferenceList( ).size( ) );
+		assertEquals( 4, text.getNamedCubeBindingReferenceList( ).size( ) );
 
 		tmpList = text.getAvailableDataSetBindingReferenceList( );
 		assertEquals( 7, tmpList.size( ) );
