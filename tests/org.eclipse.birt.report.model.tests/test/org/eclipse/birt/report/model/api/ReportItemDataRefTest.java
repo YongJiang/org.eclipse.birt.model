@@ -128,8 +128,8 @@ public class ReportItemDataRefTest extends BaseTestCase
 		assertEquals( ReportItemHandle.DATABINDING_TYPE_DATA, text
 				.getDataBindingType( ) );
 
-		List<ReportItemHandle> tmpList = text.getAvailableCubeBindingReferenceList( );
-				
+		List<ReportItemHandle> tmpList = text
+				.getAvailableCubeBindingReferenceList( );
 		assertEquals( 5, tmpList.size( ) );
 
 		// make sure the last one has no name.
@@ -142,6 +142,9 @@ public class ReportItemDataRefTest extends BaseTestCase
 
 		// make sure the last one has no name.
 		assertNull( tmpList.get( 6 ).getName( ) );
+
+		tmpList = text.getAvailableDataBindingReferenceList( );
+		assertEquals( 10, tmpList.size( ) );
 
 		assertEquals( 6, text.getNamedDataSetBindingReferenceList( ).size( ) );
 
@@ -323,8 +326,7 @@ public class ReportItemDataRefTest extends BaseTestCase
 	 * Cases:
 	 * 
 	 * <ul>
-	 * <li>table refers to the table
-	 * <li>list refers to the table
+	 * <li>table refers to the table <li>list refers to the table
 	 * </ul>
 	 * 
 	 * @throws Exception
