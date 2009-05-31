@@ -6,10 +6,7 @@
     </data-sources>
     <data-sets>
         <oda-data-set name="myDataSet1" extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet">
-            <property name="dataSource">myDataSource1</property>
-			<text-property name="displayName">My Data Set One</text-property>			
-            <property name="queryTimeOut">30000</property>				
-			<property name="queryText">select * from table</property>					
+            <property name="dataSource">myDataSource1</property>				
             <list-property name="parameters">
                 <structure>
                     <property name="name">name</property>
@@ -31,10 +28,4 @@
             </list-property>	
         </oda-data-set>
     </data-sets>
-    <page-setup>
-        <graphic-master-page name="My Page">
-            <property name="columns">1</property>
-            <property name="columnSpacing">0.25mm</property>
-        </graphic-master-page>
-    </page-setup>
 </report>
