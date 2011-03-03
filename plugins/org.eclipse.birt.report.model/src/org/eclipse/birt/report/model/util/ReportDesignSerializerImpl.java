@@ -1411,15 +1411,11 @@ class ReportDesignSerializerImpl extends ElementVisitor
 	private void localizeReportItemThemes( ReportDesign source,
 			ReportDesign target )
 	{
-		// first, export all the local report item theme elements in the report
-		// design itself
 		elements.push( target );
 		visitContents( source, new ContainerContext( source,
 				IReportDesignModel.THEMES_SLOT ) );
 		elements.pop( );
 
-		// second, copy all the external report item themes in the libraries
-		// whether it is referred or not
 		List<Library> libraries = source.getLibraries( );
 		if ( libraries == null || libraries.isEmpty( ) )
 			return;
